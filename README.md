@@ -25,8 +25,11 @@ Claude Code のサブエージェント機能を使った、講座スライド�
  └──────┘└──────┘└──────┘
            │
            ▼
-    output/course_XX/
-    video_01.md 〜 video_10.md
+    output/[コースタイトル]/
+    video_01.md 〜 video_NN.md
+           │
+           ▼
+    Google Drive に自動アップロード
 ```
 
 ## プロジェクト構成
@@ -35,6 +38,8 @@ Claude Code のサブエージェント機能を使った、講座スライド�
 create-script/
 ├── CLAUDE.md                          # プロジェクト設定・規約
 ├── README.md                          # このファイル
+├── upload_to_drive.py                 # Google Driveアップロードスクリプト
+├── setup_drive_auth.py                # Google Drive初回認証スクリプト
 ├── .claude/
 │   ├── agents/
 │   │   ├── researcher.md              # リサーチエージェント（構成指示も担当）
@@ -51,6 +56,13 @@ create-script/
 
 - Claude Code がインストール済みであること
 - Anthropic API キーが設定済みであること
+
+### 初回セットアップ（Google Drive連携）
+
+```bash
+# 1. Google Drive APIの認証（初回のみ）
+python3 setup_drive_auth.py
+```
 
 ### 台本作成の実行
 

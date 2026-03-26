@@ -43,5 +43,5 @@
 
 ## ファイル配置
 
-- `output/course_XX/` : 最終成果物（video_01.md〜video_10.md）
-- `research/course_XX/` : リサーチレポート（動画構成指示を含む）
+- `output/[コースタイトル]/` : 最終成果物（video_01.md〜video_NN.md）
+- `research/[コースタイトル]/` : リサーチレポート（動画構成指示を含む）
