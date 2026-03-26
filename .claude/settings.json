@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "gdrive": {
+      "command": "/Users/kosukeitamoto/.nvm/versions/node/v24.14.1/bin/mcp-server-gdrive",
+      "env": {
+        "GDRIVE_CREDENTIALS_PATH": "/Users/kosukeitamoto/projects/create-script/credentials.json"
+      }
+    }
+  }
+}
