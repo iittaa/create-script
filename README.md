@@ -41,7 +41,6 @@ create-script/
 │   │   └── writer.md                  # 台本執筆エージェント
 │   └── commands/
 │       └── create-script.md           # 台本作成ワークフロー
-├── courses/                           # コース定義ファイル（YAML）
 ├── research/                          # リサーチレポート（中間成果物）
 └── output/                            # 最終台本ファイル
 ```
@@ -61,7 +60,7 @@ create-script/
 /create-script
 ```
 
-コース番号を伝えると自動で台本が生成されます。
+コースタイトルと動画タイトル一覧を伝えると自動で台本が生成されます。
 
 ### 実行フロー
 
