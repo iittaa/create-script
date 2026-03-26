@@ -19,7 +19,9 @@
 
 ### Phase 3: 最終仕上げ
 - メインエージェントが全体を統合・最終チェック
-- Google ドキュメント向けのMarkdownファイルとして出力
+
+### Phase 4: Google Driveにアップロード
+- `upload_to_drive.py` を実行してGoogle Driveに自動保存
 
 ## 台本フォーマット規約
 

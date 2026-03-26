@@ -71,7 +71,10 @@ create-script/
 2. writer が各動画の台本を並列執筆（3〜4本ずつ）
    → output/[コースタイトル]/video_01.md 〜 video_NN.md に保存
 
-3. メインエージェントが品質チェック・完了報告
+3. メインエージェントが品質チェック
+
+4. Google Drive に自動アップロード
+   → python3 upload_to_drive.py output/[コースタイトル] --folder-name "[コースタイトル]"
 ```
 
 ## 各エージェントの役割
