@@ -66,10 +66,10 @@ create-script/
 
 ```
 1. researcher がコース全体をリサーチ
-   → research/course_XX/research_report.md に保存（動画構成指示含む）
+   → research/[コースタイトル]/research_report.md に保存（動画構成指示含む）
 
 2. writer が各動画の台本を並列執筆（3〜4本ずつ）
-   → output/course_XX/video_01.md 〜 video_10.md に保存
+   → output/[コースタイトル]/video_01.md 〜 video_NN.md に保存
 
 3. メインエージェントが品質チェック・完了報告
 ```
