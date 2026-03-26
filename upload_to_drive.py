@@ -74,16 +74,19 @@ def get_or_create_folder(service, folder_name, parent_id=None):
 
 
 def upload_file(service, file_path, folder_id):
-    """ファイルをGoogle Driveにアップロードする"""
-    file_name = Path(file_path).name
-    media = MediaFileUpload(file_path, mimetype="text/plain")
+    """ファイルをGoogle Driveにアップロードし、Googleドキュメントに変換する"""
+    file_path = Path(file_path)
+    # 拡張子を除いたファイル名をドキュメント名にする
+    doc_name = file_path.stem
+    media = MediaFileUpload(str(file_path), mimetype="text/plain")
     metadata = {
-        "name": file_name,
+        "name": doc_name,
+        "mimeType": "application/vnd.google-apps.document",
         "parents": [folder_id],
     }
 
     # 既存ファイルの確認
-    query = f"name='{file_name}' and '{folder_id}' in parents and trashed=false"
+    query = f"name='{doc_name}' and '{folder_id}' in parents and trashed=false and mimeType='application/vnd.google-apps.document'"
     results = service.files().list(q=query, fields="files(id, name)").execute()
     existing = results.get("files", [])
 
@@ -93,15 +96,15 @@ def upload_file(service, file_path, folder_id):
             fileId=existing[0]["id"],
             media_body=media,
         ).execute()
-        print(f"  更新: {file_name}")
+        print(f"  更新: {doc_name}")
     else:
-        # 新規アップロード
+        # 新規アップロード（Googleドキュメントに変換）
         file = service.files().create(
             body=metadata,
             media_body=media,
             fields="id",
         ).execute()
-        print(f"  アップロード: {file_name}")
+        print(f"  アップロード: {doc_name}")
 
     return file["id"]
 
