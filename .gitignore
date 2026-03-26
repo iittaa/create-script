@@ -1,1 +1,4 @@
 .tmp_gh/
+credentials.json
+token.json
+drive_token.json
