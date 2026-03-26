@@ -26,7 +26,7 @@ Claude Code のサブエージェント機能を使った、講座スライド�
            │
            ▼
     output/[コースタイトル]/
-    video_01.md 〜 video_NN.md
+    [動画タイトル].md 〜（Googleドキュメントに変換してアップロード）
            │
            ▼
     Google Drive に自動アップロード
@@ -72,7 +72,10 @@ python3 setup_drive_auth.py
 /create-script
 ```
 
-コースタイトルと動画タイトル一覧を伝えると自動で台本が生成されます。
+以下の3つを伝えると自動で台本が生成されます：
+- **講座名**（例: オンライン秘書講座）
+- **コースタイトル**（例: メール対応の基礎）
+- **動画タイトル一覧**（例: 10本分）
 
 ### 実行フロー
 
@@ -81,11 +84,11 @@ python3 setup_drive_auth.py
    → research/[コースタイトル]/research_report.md に保存（動画構成指示含む）
 
 2. writer が各動画の台本を並列執筆（3〜4本ずつ）
-   → output/[コースタイトル]/video_01.md 〜 video_NN.md に保存
+   → output/[コースタイトル]/[動画タイトル].md に保存
 
 3. メインエージェントが品質チェック
 
-4. Google Drive に自動アップロード
+4. Google Drive に自動アップロード（Googleドキュメントに変換）
    → python3 upload_to_drive.py output/[コースタイトル] --folder-name "[コースタイトル]"
 ```
 
