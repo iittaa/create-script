@@ -13,7 +13,7 @@
 ### Step 1: リサーチ
 `researcher` エージェントを起動してください。
 
-- 入力: `courses/course_XX.yaml` のコース定義
+- 入力: ユーザーから受け取ったコースタイトルと動画タイトル一覧
 - 出力: `research/course_XX/research_report.md`（動画構成指示・動画間のつながりを含む）
 
 ### Step 2: 台本執筆（並列実行）
